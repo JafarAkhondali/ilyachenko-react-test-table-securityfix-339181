@@ -13,17 +13,9 @@ define(['react', 'jsx!components/MainCheckBox', 'jsx!components/TableList', 'jsx
             };
         },
         handleChangeMainCheckBox: function () {
-            if (event.target.checked) {
-                for (var i in this.state.data) {
-                    this.state.data[i].checked = true;
-                }
+            for (var i in this.state.data) {
+                this.state.data[i].checked = event.target.checked;
             }
-            else {
-                for (var i in this.state.data) {
-                    this.state.data[i].checked = false;
-                }
-            }
-
             this.setState({});
         },
         render: function () {
